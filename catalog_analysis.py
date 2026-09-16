@@ -1,3 +1,6 @@
+import math
+
+
 movies = [
     {
         "title": "The Dune Chronicles",
@@ -80,3 +83,24 @@ movies = [
         "actors": ["P. Diaz", "T. Chalamet"],
     },
 ]
+
+
+def average_rating(movies):
+    total_rating = 0
+    for movie in movies:
+        total_rating += movie["rating"]
+    return round(total_rating / len(movies), 1)
+
+
+def catalog_age_stats(movies, current_year=2026):
+    ages = [current_year - movie["year"] for movie in movies]
+    oldest_age = max(ages)
+    newest_age = min(ages)
+    average_age = math.ceil(sum(ages) / len(ages))
+    return oldest_age, newest_age, average_age
+
+
+def duration_in_hours(minutes):
+    hours = minutes // 60
+    remaining_minutes = minutes % 60
+    return f"{hours}ч {remaining_minutes}м"
