@@ -1,13 +1,15 @@
 [project]
-name = "dz-catalog-analysis-arutiunian-m26-555"
+name = "catalog-analysis"
 version = "0.1.0"
-description = "Catalog analysis homework"
+description = "Streaming catalog analysis mini-project"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 
 [dependency-groups]
-dev = ["ruff"]
+dev = [
+    "ruff>=0.16.7",
+]
 
 [tool.ruff]
 line-length = 88
